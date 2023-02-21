@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-6">
+      <form #form="ngForm">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First name:</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="person.firstName"
+           aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last name:</label>
+            <input type="text" class="form-control" id="lastName" 
+            name="email" [(ngModel)]="person.lastName" aria-describedby="emailHelp">
+          </div>
+          <button type="button" class="btn btn-primary" (click)="submitPerson()">Submit</button>
+      </form>
+      <div [ngClass]="{'success': isError === false, 'error' : isError === true }">{{message}}</div>
+    </div>
+  </div>
